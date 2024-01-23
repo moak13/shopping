@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:shopping/ui/views/home/widgets/merchant_card.dart';
 import 'package:stacked/stacked.dart';
 import 'package:shopping/ui/common/app_colors.dart';
 import 'package:shopping/ui/common/ui_helpers.dart';
 
 import 'home_viewmodel.dart';
+import 'widgets/product_card.dart';
 
 class HomeView extends StackedView<HomeViewModel> {
   const HomeView({Key? key}) : super(key: key);
@@ -45,6 +47,16 @@ class HomeView extends StackedView<HomeViewModel> {
                   ],
                 ),
                 verticalSpaceMedium,
+                Row(
+                  children: [
+                    ProductCard(
+                      onTap: () {},
+                    ),
+                    MerchantCard(
+                      onTap: () {},
+                    ),
+                  ],
+                ),
                 MaterialButton(
                   color: kcDarkGreyColor,
                   onPressed: viewModel.showDialog,
