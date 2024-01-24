@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/app/app.dialogs.dart';
 import 'package:shopping/app/app.locator.dart';
 import 'package:shopping/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -7,7 +6,6 @@ import 'package:stacked_services/stacked_services.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
-  setupDialogUi();
   runApp(const MainApp());
 }
 
