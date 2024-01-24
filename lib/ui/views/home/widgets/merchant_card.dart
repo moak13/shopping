@@ -53,12 +53,13 @@ class MerchantLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.topRight,
       children: [
         Image.asset(
           logo,
           height: 60,
           width: 60,
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
         Builder(builder: (context) {
           if (isActive) {

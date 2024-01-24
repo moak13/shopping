@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import 'home_viewmodel.dart';
+import 'sections/merchants_section.dart';
 import 'sections/products_section.dart';
 import 'sections/search_section.dart';
 import 'sections/top_section.dart';
@@ -23,6 +24,7 @@ class HomeView extends StackedView<HomeViewModel> {
             TopSection(),
             SearchSection(),
             ProductsSection(),
+            MerchantsSection(),
           ],
         ),
       ),

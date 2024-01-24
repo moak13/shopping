@@ -115,7 +115,7 @@ class ProductsSection extends ViewModelWidget<HomeViewModel> {
                           viewModel.products.reversed.elementAt(index);
                       return ProductCard(
                         product: product,
-                        onTap: () {},
+                        onTap: viewModel.actionMoveToProduct,
                       );
                     },
                     separatorBuilder: (context, index) {
