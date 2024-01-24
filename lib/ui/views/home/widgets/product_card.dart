@@ -42,80 +42,78 @@ class ProductCard extends StatelessWidget {
             ),
             child: Stack(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: 96,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(product?.image ?? ''),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 96,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(product?.image ?? ''),
+                          ),
                         ),
                       ),
-                    ),
-                    verticalSpace(13),
-                    Row(
-                      children: [
-                        horizontalSpaceSmall,
-                        Text(
-                          product?.name ?? '--',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 14,
-                            color: Color(0xff1A1A1A),
-                          ),
+                      verticalSpace(13),
+                      Text(
+                        product?.name ?? '--',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w800,
+                          fontSize: 14,
+                          color: Color(0xff1A1A1A),
                         ),
-                      ],
-                    ),
-                    verticalSpace(8),
-                    Row(
-                      children: [
-                        horizontalSpace(7),
-                        RichText(
-                          text: TextSpan(
-                            text: '₦ ',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w800,
-                              fontSize: 14,
-                              color: Color(0xff274FED),
-                            ),
-                            children: [
-                              TextSpan(
-                                text: product?.promoPrice ?? '--',
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 14,
-                                ),
+                        softWrap: true,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      verticalSpace(8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          RichText(
+                            text: TextSpan(
+                              text: '₦ ',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w800,
+                                fontSize: 14,
+                                color: Color(0xff274FED),
                               ),
-                            ],
-                          ),
-                        ),
-                        horizontalSpace(14),
-                        RichText(
-                          text: TextSpan(
-                            text: '₦ ',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12,
-                              color: Color(0xffB3B3CC),
-                              decoration: TextDecoration.lineThrough,
-                            ),
-                            children: [
-                              TextSpan(
-                                text: product?.price ?? '--',
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 12,
-                                  decoration: TextDecoration.lineThrough,
+                              children: [
+                                TextSpan(
+                                  text: product?.promoPrice ?? '--',
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 14,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                          RichText(
+                            text: TextSpan(
+                              text: '₦ ',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 12,
+                                color: Color(0xffB3B3CC),
+                                decoration: TextDecoration.lineThrough,
+                              ),
+                              children: [
+                                TextSpan(
+                                  text: product?.price ?? '--',
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 12,
+                                    decoration: TextDecoration.lineThrough,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 CompanyLogo(
                   logo: product?.companyLogo ?? '',
@@ -144,6 +142,7 @@ class CompanyLogo extends StatelessWidget {
     return Container(
       height: 50,
       width: 50,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.circle,
@@ -188,7 +187,9 @@ class CompanyLogo extends StatelessWidget {
 
           return Image.asset(
             logo,
-            fit: BoxFit.contain,
+            height: 35,
+            width: 35,
+            fit: BoxFit.scaleDown,
           );
         },
       ),
