@@ -9,44 +9,42 @@ class SearchSection extends ViewModelWidget<HomeViewModel> {
 
   @override
   Widget build(BuildContext context, HomeViewModel viewModel) {
-    return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.only(
-          left: 12,
-          right: 12,
-          top: 16,
-          bottom: 16,
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search for products or stores',
-                  hintStyle: const TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    color: Color(0xff9494B8),
-                  ),
-                  prefixIcon: const Icon(
-                    Icons.search,
-                    color: Color(0xff9494B8),
-                  ),
-                  filled: true,
-                  fillColor: const Color(0xffF1F3FE),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide.none,
-                  ),
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 12,
+        right: 12,
+        top: 16,
+        bottom: 16,
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Search for products or stores',
+                hintStyle: const TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  color: Color(0xff9494B8),
+                ),
+                prefixIcon: const Icon(
+                  Icons.search,
+                  color: Color(0xff9494B8),
+                ),
+                filled: true,
+                fillColor: const Color(0xffF1F3FE),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide.none,
                 ),
               ),
             ),
-            horizontalSpace(20),
-            SearchButton(
-              onTap: viewModel.actionSearch,
-            ),
-          ],
-        ),
+          ),
+          horizontalSpace(20),
+          SearchButton(
+            onTap: viewModel.actionSearch,
+          ),
+        ],
       ),
     );
   }

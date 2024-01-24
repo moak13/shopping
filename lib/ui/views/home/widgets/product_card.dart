@@ -42,21 +42,21 @@ class ProductCard extends StatelessWidget {
             ),
             child: Stack(
               children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 96,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(product?.image ?? ''),
-                          ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 96,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(product?.image ?? ''),
                         ),
                       ),
-                      verticalSpace(13),
-                      Text(
+                    ),
+                    verticalSpace(13),
+                    Expanded(
+                      child: Text(
                         product?.name ?? '--',
                         style: const TextStyle(
                           fontWeight: FontWeight.w800,
@@ -66,54 +66,54 @@ class ProductCard extends StatelessWidget {
                         softWrap: true,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      verticalSpace(8),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          RichText(
-                            text: TextSpan(
-                              text: '₦ ',
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w800,
-                                fontSize: 14,
-                                color: Color(0xff274FED),
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: product?.promoPrice ?? '--',
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ],
+                    ),
+                    verticalSpace(8),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                            text: '₦ ',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 14,
+                              color: Color(0xff274FED),
                             ),
-                          ),
-                          RichText(
-                            text: TextSpan(
-                              text: '₦ ',
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 12,
-                                color: Color(0xffB3B3CC),
-                                decoration: TextDecoration.lineThrough,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: product?.price ?? '--',
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12,
-                                    decoration: TextDecoration.lineThrough,
-                                  ),
+                            children: [
+                              TextSpan(
+                                text: product?.promoPrice ?? '--',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 14,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                        RichText(
+                          text: TextSpan(
+                            text: '₦ ',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                              color: Color(0xffB3B3CC),
+                              decoration: TextDecoration.lineThrough,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: product?.price ?? '--',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 12,
+                                  decoration: TextDecoration.lineThrough,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
                 CompanyLogo(
                   logo: product?.companyLogo ?? '',

@@ -19,12 +19,18 @@ class HomeView extends StackedView<HomeViewModel> {
     return const Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
+        child: Column(
+          children: [
             TopSection(),
             SearchSection(),
-            ProductsSection(),
-            MerchantsSection(),
+            Expanded(
+              child: CustomScrollView(
+                slivers: [
+                  ProductsSection(),
+                  MerchantsSection(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
