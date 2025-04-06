@@ -413,6 +413,7 @@ class MockBottomSheetService extends _i1.Mock
     Duration? enterBottomSheetDuration,
     bool? ignoreSafeArea,
     bool? useRootNavigator = false,
+    double? elevation = 1.0,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -430,6 +431,7 @@ class MockBottomSheetService extends _i1.Mock
             #enterBottomSheetDuration: enterBottomSheetDuration,
             #ignoreSafeArea: ignoreSafeArea,
             #useRootNavigator: useRootNavigator,
+            #elevation: elevation,
           },
         ),
         returnValue: _i5.Future<_i2.SheetResponse<dynamic>?>.value(),
@@ -452,6 +454,7 @@ class MockBottomSheetService extends _i1.Mock
     String? additionalButtonTitle,
     bool? takesInput = false,
     _i6.Color? barrierColor = const _i6.Color(2315255808),
+    double? elevation = 1.0,
     bool? barrierDismissible = true,
     bool? isScrollControlled = false,
     String? barrierLabel = r'',
@@ -481,6 +484,7 @@ class MockBottomSheetService extends _i1.Mock
             #additionalButtonTitle: additionalButtonTitle,
             #takesInput: takesInput,
             #barrierColor: barrierColor,
+            #elevation: elevation,
             #barrierDismissible: barrierDismissible,
             #isScrollControlled: isScrollControlled,
             #barrierLabel: barrierLabel,
@@ -553,6 +557,8 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
     String? buttonTitle = r'Ok',
     _i6.Color? buttonTitleColor,
     bool? barrierDismissible = false,
+    _i4.RouteSettings? routeSettings,
+    _i4.GlobalKey<_i4.NavigatorState>? navigatorKey,
     _i2.DialogPlatform? dialogPlatform,
   }) =>
       (super.noSuchMethod(
@@ -567,6 +573,8 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
             #buttonTitle: buttonTitle,
             #buttonTitleColor: buttonTitleColor,
             #barrierDismissible: barrierDismissible,
+            #routeSettings: routeSettings,
+            #navigatorKey: navigatorKey,
             #dialogPlatform: dialogPlatform,
           },
         ),
@@ -593,6 +601,9 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
     bool? barrierDismissible = false,
     String? barrierLabel = r'',
     bool? useSafeArea = true,
+    _i4.RouteSettings? routeSettings,
+    _i4.GlobalKey<_i4.NavigatorState>? navigatorKey,
+    _i4.RouteTransitionsBuilder? transitionBuilder,
     dynamic customData,
     R? data,
   }) =>
@@ -617,6 +628,9 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
             #barrierDismissible: barrierDismissible,
             #barrierLabel: barrierLabel,
             #useSafeArea: useSafeArea,
+            #routeSettings: routeSettings,
+            #navigatorKey: navigatorKey,
+            #transitionBuilder: transitionBuilder,
             #customData: customData,
             #data: data,
           },
@@ -634,6 +648,7 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
     String? confirmationTitle = r'Ok',
     _i6.Color? confirmationTitleColor,
     bool? barrierDismissible = false,
+    _i4.RouteSettings? routeSettings,
     _i2.DialogPlatform? dialogPlatform,
   }) =>
       (super.noSuchMethod(
@@ -648,6 +663,7 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
             #confirmationTitle: confirmationTitle,
             #confirmationTitleColor: confirmationTitleColor,
             #barrierDismissible: barrierDismissible,
+            #routeSettings: routeSettings,
             #dialogPlatform: dialogPlatform,
           },
         ),
